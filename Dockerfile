@@ -7,7 +7,12 @@
 #COPY _site/ /usr/share/nginx/html
 
 FROM sebp/lighttpd
-ENV TZ="Europe/Berlin"
+
+RUN apk add tzdata && \
+    cp /usr/share/zoneinfo/Europe/Berlin /etc/localtime && \
+    echo "Europe/Berlin" > /etc/timezone && \
+    apk del tzdata
+
 COPY _site/ /var/www/localhost/htdocs
 
 EXPOSE 80
