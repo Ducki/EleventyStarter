@@ -8,6 +8,7 @@
 
 FROM sebp/lighttpd
 
+# Adds correct timezone for access.log dates
 RUN apk add tzdata && \
     cp /usr/share/zoneinfo/Europe/Berlin /etc/localtime && \
     echo "Europe/Berlin" > /etc/timezone && \
