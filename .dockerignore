@@ -1,4 +1,1 @@
-# ignore everything except the output directory:
-*
-!_site
-!Caddyfile
+node_modules
