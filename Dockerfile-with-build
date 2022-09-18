@@ -1,7 +1,7 @@
 FROM node:alpine as npminstall
 WORKDIR /home/node/app
 COPY package.json /home/node/app/
-RUN npm install --silent
+RUN npm ci
 COPY . /home/node/app/
 RUN npm run build
 
